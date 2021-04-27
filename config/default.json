@@ -1,0 +1,4 @@
+{
+    "mongoURI":"mongodb+srv://devlopermedia:test123456@cluster0.d2pmr.mongodb.net/Socialhack?retryWrites=true&w=majority",
+    "recipe" : "theencodedone"
+}
