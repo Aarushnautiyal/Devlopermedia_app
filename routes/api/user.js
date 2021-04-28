@@ -9,6 +9,8 @@ const User = require("../../models/User")
 
 const router = express.Router()
 
+// @desc: Register user
+
 // validating the inputs required
 router.post("/",[
     check('name',"name is required")
