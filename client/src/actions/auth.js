@@ -80,7 +80,7 @@ export const login = (email,password) => async dispatch =>{
         dispatch(loadUser())
 
     } catch (err) {
-        const errors = err.response.data.errors
+        const errors = err.response.data.console.errors;
 
         if(errors){
             errors.forEach(error=>dispatch(setAlert(error.msg,'danger')));
