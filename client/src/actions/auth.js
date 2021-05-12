@@ -49,10 +49,10 @@ export const register = ({name,email,password}) => async dispatch =>{
         })
         dispatch(loadUser())
     } catch (err) {
-        const errors = err.response.data.errors
+        const errors = err.response.data.console.errors
 
         if(errors){
-            errors.forEach(error=>dispatch(setAlert(error.msg,'danger')));
+            dispatch(setAlert(errors.msg,'danger'))
         }
         dispatch({
             type: REGISTER_FAIL
@@ -80,11 +80,9 @@ export const login = (email,password) => async dispatch =>{
         dispatch(loadUser())
 
     } catch (err) {
-        const errors = err.response.data.console.errors;
+        
+        dispatch(setAlert('Please check your email and password then try again ', 'danger'))
 
-        if(errors){
-            errors.forEach(error=>dispatch(setAlert(error.msg,'danger')));
-        }
         dispatch({
             type: LOGIN_FAIL
         })
